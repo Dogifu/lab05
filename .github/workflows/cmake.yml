@@ -23,13 +23,12 @@ jobs:
         sudo apt install lcov
         
     - name: Build
-      run: cmake -H. -B _build -DCOVERAGE=1 && cmake --build _build
+      run: |
+        cmake -H. -B _build -DCOVERAGE=1 && cmake --build _build
+        cd _build/
+        ./test >> file.txt
       
-    - name: A
-      run: | 
-           cd _build/
-           ./test >> file.txt
-
+           
     - name: Test
       working-directory: ${{github.workspace}}/_build
       run: | 
