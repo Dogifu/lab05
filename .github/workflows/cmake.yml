@@ -28,7 +28,6 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/_build
       run: |
-        touch file.txt
         ./test >> file.txt
         lcov -c -t "tree" -o lcov.info -d .
         lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info
