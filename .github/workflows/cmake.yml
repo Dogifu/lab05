@@ -28,7 +28,7 @@ jobs:
     - name: A
       run: | 
         touch file.txt
-        ${{github.workspace}}/_build/.test >> file.txt
+        ${{github.workspace}}/_build. >> file.txt
 
     - name: Test
       working-directory: ${{github.workspace}}/_build
