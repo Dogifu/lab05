@@ -28,7 +28,7 @@ jobs:
         ls
         cd _build/
         ls
-        ./test >> file.txt
+        ./test
       
            
     - name: Test
