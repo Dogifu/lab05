@@ -28,7 +28,7 @@ jobs:
         ls
         cd _build/
         ls
-        nohup ./test file.txt
+        nohup ./test >file.txt
       
       
            
