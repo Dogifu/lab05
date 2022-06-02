@@ -25,9 +25,7 @@ jobs:
     - name: Build
       run: cmake -H. -B _build -DCOVERAGE=1 && cmake --build _build
       
-      
     - name: A
-      working-directory: ${{github.workspace}}/_build
       run: | 
         touch file.txt
         ./test >> file.txt
