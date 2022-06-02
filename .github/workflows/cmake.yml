@@ -24,12 +24,17 @@ jobs:
         
     - name: Build
       run: cmake -H. -B _build -DCOVERAGE=1 && cmake --build _build
-
-    - name: Test
+      
+      
+    - name: A
       working-directory: ${{github.workspace}}/_build
       run: | 
         touch file.txt
         ./test >> file.txt
+
+    - name: Test
+      working-directory: ${{github.workspace}}/_build
+      run: | 
         lcov -c -t "tree" -o lcov.info -d .
         lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info
         lcov --remove lcov.info '/usr/include/*' -o lcov.info
