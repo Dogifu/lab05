@@ -22,7 +22,7 @@ public:
 
 TEST(Account, GetBalance){
 MockAccount acc(1,100);
-EXPECT_EQ(acc.Account::GetBalance(), 100);
+EXPECT_EQ(acc.Account::GetBalance(), 99999999);
 }
 
 TEST(Account, ChangeBalance){
